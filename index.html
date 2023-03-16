@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Agricultural comparision of different countries using graph</title> 
+
+    <script  src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Agricultural', 'Crops', 'Percentage'],
+          ['China', 'Rice', 23],
+          ['United States', 'Wheat', 80],
+          ['Russia', 'Celeals', 13],
+          ['Turkey', 'Tobacco', 65],
+        ]);
+
+        var options = {
+    title : 'Comparision of agricultural crops in diffrent countries',
+     colorAxis : { colors : ['green', 'red']} 
+};
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 800px; height: 400px;"></div>
+
+<table>
+<tr> 
+<th> country </th>
+<th> Information </th>
+</tr>
+
+<tr>
+<td><b> China </b></td>
+<td> <p> China is highly employed for agriclture, 23% of the world, rice is Produced in china. </p> </td> </tr>
+
+<tr>
+<td><b> United States </b></td>
+<td> <p> In US, 80% of the total production is occupied by wheat.</p> </td> </tr>
+
+
+<tr>
+<td><b> Russia </b></td>
+<td> <p> In Russia, 13% of production is occupied by Cereals. </p> </td> </tr>
+
+<tr>
+<td><b> Turkey </b></td>
+<td> <p>In eastren side of Turkey 65% of production by Tobacco </p> </td> </tr>
+</table>
+  </body>
+</html>
